@@ -34,6 +34,20 @@ public class TwoSum {
         return output;
     }
 
+    public int[] twoSumSorted(int[] numbers, int target) {
+        int leftPointer = 0;
+        int rightPointer = 1;
+
+        while(leftPointer < rightPointer){
+            if(numbers[leftPointer] + numbers[rightPointer] == target){
+                return new int[]{leftPointer + 1, rightPointer + 1};
+            }
+            leftPointer++;
+            rightPointer++;
+        }
+        return new int[]{0, 0};
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int size = sc.nextInt();
@@ -45,5 +59,6 @@ public class TwoSum {
         TwoSum twoSumClass = new TwoSum();
         System.out.println(Arrays.toString(twoSumClass.twoSumBruteForce(nums, target)));
         System.out.println(Arrays.toString(twoSumClass.twoSumHashmap(nums, target)));
+        System.out.println(Arrays.toString(twoSumClass.twoSumSorted(nums, target)));
     }
 }
