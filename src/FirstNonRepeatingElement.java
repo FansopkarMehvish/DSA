@@ -8,9 +8,9 @@ public class FirstNonRepeatingElement {
         for(int i = 0; i < arr.length; i++){
             freq[arr[i]]++;
         }
-        for(int j = 0; j < freq.length; j++){
-            if(freq[j] == 1){
-                firstNonRepeatingElement = j;
+        for(int j = 0; j < arr.length; j++){
+            if(freq[arr[j]] == 1){
+                firstNonRepeatingElement = arr[j];
                 break;
             }
         }
